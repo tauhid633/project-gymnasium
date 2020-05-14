@@ -73,6 +73,13 @@ $(function () {
         $('html,body').animate({
             scrollTop: 0,
         });
+        $('.home').addClass('active');
+        $('.about').removeClass('active');
+        $('.glry').removeClass('active');
+        $('.team').removeClass('active');
+        $('.testi').removeClass('active');
+        $('.plans').removeClass('active');
+        $('.contct').removeClass('active');
     });
 
     //====================menu-fix===================
@@ -101,6 +108,7 @@ $(function () {
     //==============================active====================
     $('.home').click(function () {
         $('.home').addClass('active');
+        $('.about').removeClass('active');
         $('.glry').removeClass('active');
         $('.team').removeClass('active');
         $('.testi').removeClass('active');
@@ -167,13 +175,5 @@ $(function () {
         $('.testi').removeClass('active');
         $('.plans').removeClass('active');
     });
-
-
-
-
-
-
-
-
 
 });
