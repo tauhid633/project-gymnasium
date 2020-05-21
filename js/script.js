@@ -6,7 +6,7 @@ $(function () {
     $('#banner_part').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
         dots: true,
         arrows: true,
@@ -22,17 +22,78 @@ $(function () {
 
     $('.venobox_img').venobox();
 
-    //===================Menu Fix==============================
+    //===================Team Slider==============================
+
+    $('.team_slider').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 2000,
+        dots: false,
+        arrows: false,
+        prevArrow: '<i class="fas fa-angle-left tm_nxt"></i>',
+        nextArrow: '<i class="fas fa-angle-right tm_prv"></i>',
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+    },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    arrows: true,
+                }
+    },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: false,
+                    arrows: true,
+                }
+    }
+  ]
+    });
+
 
     //===================Text  banner==========================
 
     $('.txt_slider').slick({
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
         dots: true,
         arrows: false,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+    },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+    },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+    }
+  ]
     });
 
     //==================Counter up=================================
@@ -47,20 +108,42 @@ $(function () {
     $('.logo_slider').slick({
         slidesToShow: 5,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
         dots: false,
-        arrows: true,
+        arrows: false,
         prevArrow: '<i class="fas fa-angle-left logo_prvarr"></i>',
         nextArrow: '<i class="fas fa-angle-right logo_nxtarr"></i>',
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                }
+    },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+    },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+    }
+  ]
     });
 
     //=====================botton-top==============================
 
     $(window).scroll(function () {
-        var buttontop = $(this).scrollTop();
 
-        if (buttontop > 150) {
+        if ($(this).scrollTop() > 150) {
             $('.btn_top').fadeIn();
 
 
@@ -73,31 +156,20 @@ $(function () {
         $('html,body').animate({
             scrollTop: 0,
         });
-        $('.home').addClass('active');
-        $('.about').removeClass('active');
-        $('.glry').removeClass('active');
-        $('.team').removeClass('active');
-        $('.testi').removeClass('active');
-        $('.plans').removeClass('active');
-        $('.contct').removeClass('active');
+
     });
 
     //====================menu-fix===================
 
-    var navoff = $('.main_menu').offset().top;
+    $(window).on('scroll', function () {
 
-    $(window).scroll(function () {
-        var scrolling = $(this).scrollTop();
-
-        if (scrolling > 600) {
+        if ($(window).scrollTop()) {
             $('.main_menu').addClass('menu_fix');
-
 
         } else {
             $('.main_menu').removeClass('menu_fix');
         }
     });
-
     //=====================preloader=====================
 
     $(window).load(function () {
@@ -106,74 +178,7 @@ $(function () {
 
 
     //==============================active====================
-    $('.home').click(function () {
-        $('.home').addClass('active');
-        $('.about').removeClass('active');
-        $('.glry').removeClass('active');
-        $('.team').removeClass('active');
-        $('.testi').removeClass('active');
-        $('.plans').removeClass('active');
-        $('.contct').removeClass('active');
+    $(document).on('click', 'ul li', function () {
+        $(this).addClass('active').siblings().removeClass('active');
     });
-
-    $('.about').click(function () {
-        $('.about').addClass('active');
-        $('.home').removeClass('active');
-        $('.glry').removeClass('active');
-        $('.team').removeClass('active');
-        $('.testi').removeClass('active');
-        $('.plans').removeClass('active');
-        $('.contct').removeClass('active');
-    });
-
-    $('.glry').click(function () {
-        $('.glry').addClass('active');
-        $('.home').removeClass('active');
-        $('.about').removeClass('active');
-        $('.team').removeClass('active');
-        $('.testi').removeClass('active');
-        $('.plans').removeClass('active');
-        $('.contct').removeClass('active');
-    });
-
-    $('.team').click(function () {
-        $('.team').addClass('active');
-        $('.home').removeClass('active');
-        $('.about').removeClass('active');
-        $('.glry').removeClass('active');
-        $('.testi').removeClass('active');
-        $('.plans').removeClass('active');
-        $('.contct').removeClass('active');
-    });
-
-    $('.testi').click(function () {
-        $('.testi').addClass('active');
-        $('.home').removeClass('active');
-        $('.about').removeClass('active');
-        $('.glry').removeClass('active');
-        $('.team').removeClass('active');
-        $('.plans').removeClass('active');
-        $('.contct').removeClass('active');
-    });
-
-    $('.plans').click(function () {
-        $('.plans').addClass('active');
-        $('.home').removeClass('active');
-        $('.about').removeClass('active');
-        $('.glry').removeClass('active');
-        $('.team').removeClass('active');
-        $('.testi').removeClass('active');
-        $('.contct').removeClass('active');
-    });
-
-    $('.contct').click(function () {
-        $('.contct').addClass('active');
-        $('.home').removeClass('active');
-        $('.about').removeClass('active');
-        $('.glry').removeClass('active');
-        $('.team').removeClass('active');
-        $('.testi').removeClass('active');
-        $('.plans').removeClass('active');
-    });
-
 });

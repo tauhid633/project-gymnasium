@@ -151,6 +151,10 @@ button {
     padding: 0;
 }
 
+.main_menu button i{
+color: #fff;
+}
+
 /*================================================
                 Menu part End
 ==================================================*/
@@ -450,7 +454,7 @@ button {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding: 30px 0;
+    padding: 30px 0 0;
     position: relative;
     z-index: 1;
 }
@@ -468,6 +472,7 @@ button {
 
 .gallery_img {
     position: relative;
+    margin-bottom: 30px;
 }
 
 .gallery_img .gallery_img_overly {
@@ -739,6 +744,10 @@ button {
     border: 1px solid #e23e38;
 }
 
+.row_margin {
+    margin-right: 30px;
+}
+
 /*================================================
                 testimonial part End
 ==================================================*/
@@ -941,8 +950,10 @@ button {
     -webkit-transition: all linear .4s;
 }
 
-.shedule li:hover {
+.shedule li:hover,
+.class_menu li:hover .nav-link {
     background: #e23e38;
+    color: #fff;
 }
 
 .shedule li:hover p,
@@ -960,6 +971,8 @@ button {
 .class_menu li {
     width: 16.66%;
     text-align: center;
+    transition: all linear .4s;
+    -webkit-transition: all linear .4s;
 }
 
 .class_menu .nav-link {
@@ -1019,6 +1032,10 @@ button {
 .logo_nxtarr:hover,
 .logo_prvarr:hover {
     color: #e23e38;
+}
+
+.logo_slider a {
+    display: block;
 }
 
 .logo_slider img {
@@ -1107,10 +1124,14 @@ button {
 }
 
 .fickr_inner ul li {
-    width: 22.146%;
+    width: 25%;
     float: left;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.fickr_inner ul li a {
+    display: block;
 }
 
 .fickr_inner ul li:nth-child(4),
@@ -1181,6 +1202,10 @@ button {
 .social a:hover {
     background: #e23e38;
     border: 1px solid #e23e38;
+}
+
+.footer_text {
+    padding-bottom: 30px;
 }
 
 .footer_inner {
