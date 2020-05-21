@@ -6,7 +6,7 @@ $(function () {
     $('#banner_part').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
         dots: true,
         arrows: true,
@@ -27,7 +27,7 @@ $(function () {
     $('.team_slider').slick({
         slidesToShow: 4,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
         dots: false,
         arrows: false,
@@ -67,7 +67,7 @@ $(function () {
     $('.txt_slider').slick({
         slidesToShow: 2,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
         dots: true,
         arrows: false,
@@ -108,7 +108,7 @@ $(function () {
     $('.logo_slider').slick({
         slidesToShow: 5,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
         dots: false,
         arrows: false,
